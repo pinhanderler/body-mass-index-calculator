@@ -1,0 +1,35 @@
+private RadioButton maleRadio;
+private RadioButton femaleRadio;
+
+final EditText height=(EditText)findViewById(R.id.txtHeight);
+final EditText weight=(EditText)findViewById(R.id.txtWeight);
+Button btnCalculate=(Button)findViewById(R.id.button1);
+maleRadio = (RadioButton)findViewById(R.id.man);
+femaleRadio = (RadioButton)findViewById(R.id.woman);
+
+btnCalculate.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View v) {
+        float hFloatValue=Float.parseFloat(height.getText().toString());
+        float wFloatValue=Float.parseFloat(weight.getText().toString());
+        float sonuc = wFloatValue/((hFloatValue / 100) * (hFloatValue / 100));
+        float idealWeight = 0;
+
+        if(maleRadio.isChecked()){
+            idealWeight = (float) ((hFloatValue-100)*0.89);
+            //Toast.makeText(getApplicationContext(), "Bay seçildi"+sonuc, Toast.LENGTH_SHORT).show();
+        }
+        else if(femaleRadio.isChecked()){
+            idealWeight = (float) ((hFloatValue-100)*0.94);
+            //Toast.makeText(getApplicationContext(), "Bayan seçildi"+sonuc, Toast.LENGTH_SHORT).show();
+        }
+
+
+        Intent myIntent = new Intent(MainActivity.this, TheSecond.class);
+        myIntent.putExtra("myIdealWeight", Float.toString(idealWeight));
+        myIntent.putExtra("myCurrentAverage", Float.toString(sonuc));
+        startActivity(myIntent);
+
+
+
+    }
+});
