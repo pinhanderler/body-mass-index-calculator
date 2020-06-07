@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sport_of_life.sportoflife">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.Register" />
+        <activity android:name=".activities.listview.programlist.ListViewA" />
+        <activity android:name=".activities.listview.programlist.ListViewB" />
+        <activity android:name=".activities.listview.programlist.ListViewC" />
+        <activity android:name=".activities.listview.programlist.ListViewD" />
+        <activity android:name=".activities.listview.programlist.ListViewE" />
+        <activity android:name=".activities.listview.programlist.ListViewF" />
+        <activity android:name=".activities.listview.programlist.ListViewG" />
+        <activity android:name=".activities.listview.programlist.ListViewH" />
+        <activity android:name=".activities.listview.buttonlist.ListViewBir" />
+        <activity android:name=".activities.listview.buttonlist.ListViewIki" />
+        <activity android:name=".activities.listview.buttonlist.ListViewUc" />
+        <activity android:name=".activities.listview.buttonlist.ListViewDort" />
+        <activity android:name=".activities.listview.buttonlist.ListViewBes" />
+        <activity android:name=".activities.listview.buttonlist.ListViewAlti" />
+        <activity android:name=".activities.listview.buttonlist.ListViewYedi" />
+        <activity android:name=".activities.listview.buttonlist.ListViewSekiz" />
+        <activity android:name=".activities.listview.buttonlist.ListViewDokuz" />
+        <activity android:name=".activities.listview.buttonlist.ListViewOn" />
+        <activity android:name=".activities.listview.buttonlist.ListViewOnBir" />
+        <activity android:name=".activities.listview.buttonlist.ListViewOnIki" />
+    </application>
+
+</manifest>
