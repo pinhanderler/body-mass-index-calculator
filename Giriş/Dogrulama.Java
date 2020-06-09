@@ -1,4 +1,4 @@
-package com.sport_of_life.sportoflife.helpers;
+package bodymassindexcalculator;
 
 import android.app.Activity;
 import android.content.Context;
