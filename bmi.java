@@ -21,7 +21,7 @@ System.out.println(df.format(kilo-24.9*Math.pow(boy/100,2))+" You need to lose w
 else if(vki<=39.9){
 System.out.println("Obese");
 System.out.println(df.format(kilo-24.9*Math.pow(boy/100,2))+" You need to lose weight"); }
-else {
+else if(vki<=39.9){
 System.out.println("Extreme Obese");
 System.out.println(df.format(kilo - 24.9 * Math.pow(boy / 100, 2)) + " You need to lose weight"); }
 }
