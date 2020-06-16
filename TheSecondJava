@@ -10,10 +10,10 @@ tvAciklama = (TextView) findViewById(R.id.textView2);
 idealWeight = Float.parseFloat(getIntent().getStringExtra("myIdealWeight"));
 myAverage = Float.parseFloat(getIntent().getStringExtra("myCurrentAverage"));
 
-if(idealWeight > 0){
+if(idealWeight > 0) {
     tvSonuc.setText(getString(R.string.idealWeight)+"; "+Math.round(idealWeight));
-}else{
-    tvSonuc.setText(getString(R.string.val001));
+} else {
+    tvSonuc.setText(getString(R.string.val001)); 
 }
 
 if(Math.round(myAverage) >0 && Math.round(myAverage)<18.49){
