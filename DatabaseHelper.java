@@ -69,7 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_USER_PASSWORD,
         };
 
- Dize sortOrder =  COLUMN_USER_NAME  +  " ASC " ;    
+        Dize sortOrder =  COLUMN_USER_NAME  +  " ASC " ;    
                  
         List<User> userList = new ArrayList<User>();
 
@@ -83,8 +83,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null,
                 sortOrder);
 
-        if(cursor.moveToFirst()){
-            do{
+        if( cursor.moveToFirst()){
+            do {
                 User user = new User();
                 user.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
                 user.setUserId((cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID))));
@@ -95,7 +95,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.setPassword((cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD))));
 
                 userList.add(user);
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext()); 
         }
         cursor.close();
         db.close();
@@ -147,24 +147,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int cursorCount = cursor.getCount();
         cursor.close();
         db.close();
-
-        if (cursorCount > 0){
-            return true;
-        }
-
-        return false;
-    }
-
+        
+        return cursorCount > 0;
+  
     public boolean checkUser(String username, String password){
 
-        String[] columns = {
-                COLUMN_USER_ID
-        };
+        public boolean checkUser(String username, String password) {
+        String[] columns = { COLUMN_USER_ID };
         SQLiteDatabase db = this.getReadableDatabase();
-
         String selection = COLUMN_USER_USER_NAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
-
-        String[] selectionArgs = {username,password;
+        String[] selectionArgs = { username, password };
 
         Cursor cursor = db.query(TABLE_USER,
                 columns,
@@ -179,10 +171,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
 
-        if (cursorCount > 0) {
-            return true;
-        }
-
-        return false;
+         return cursorCount > 0;
     }
 }
