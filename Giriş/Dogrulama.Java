@@ -22,12 +22,9 @@ public class InputDogrulama {
             textInputLayout.setError(message);
             hideKeyboardFrom(textInputEditText);
             return false;
-        } else {
+        } 
             textInputLayout.setErrorEnabled(false);
-        }
-
         return true;
-    }
 
     public boolean isInputEditTextEmail(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message) {
         String value = textInputEditText.getText().toString().trim();
@@ -35,11 +32,9 @@ public class InputDogrulama {
             textInputLayout.setError(message);
             hideKeyboardFrom(textInputEditText);
             return false;
-        }else {
-            textInputLayout.setErrorEnabled(false);
         }
+            textInputLayout.setErrorEnabled(false);
         return true;
-    }
 
     public boolean isInputEditTextMatches(TextInputEditText textInputEditText1, TextInputEditText textInputEditText2, TextInputLayout textInputLayout, String message){
         String value1 = textInputEditText1.getText().toString().trim();
@@ -48,11 +43,9 @@ public class InputDogrulama {
             textInputLayout.setError(message);
             hideKeyboardFrom(textInputEditText2);
             return false;
-        } else {
+        } 
             textInputLayout.setErrorEnabled(false);
-        }
         return true;
-    }
 
     private void hideKeyboardFrom(View view){
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
