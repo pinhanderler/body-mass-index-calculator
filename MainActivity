@@ -14,11 +14,10 @@ btnCalculate.setOnClickListener(new View.OnClickListener() {
         float sonuc = wFloatValue/((hFloatValue / 100) * (hFloatValue / 100));
         float idealWeight = 0;
 
-        if(maleRadio.isChecked()){
+        if (maleRadio.isChecked()) {
             idealWeight = (float) ((hFloatValue-100)*0.89);
             //Toast.makeText(getApplicationContext(), "Bay seçildi"+sonuc, Toast.LENGTH_SHORT).show();
-        }
-        else if(femaleRadio.isChecked()){
+        } else if(femaleRadio.isChecked()){
             idealWeight = (float) ((hFloatValue-100)*0.94);
             //Toast.makeText(getApplicationContext(), "Bayan seçildi"+sonuc, Toast.LENGTH_SHORT).show();
         }
