@@ -38,9 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){ db.execSQL(CREATE_USER_TABLE);}
 
     public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion){
-
         db.execSQL(DROP_USER_TABLE);
-
         onCreate(db);
     }
 
@@ -71,8 +69,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_USER_PASSWORD,
         };
 
-        String sortOrder =
-                COLUMN_USER_NAME + " ASC";
+ Dize sortOrder =  COLUMN_USER_NAME  +  " ASC " ;    
+                 
         List<User> userList = new ArrayList<User>();
 
         SQLiteDatabase db = this.getReadableDatabase();
