@@ -16,18 +16,33 @@ if(idealWeight > 0) {
     tvSonuc.setText(getString(R.string.val001)); 
 }
 
-if(Math.round(myAverage) >0 && Math.round(myAverage)<18.49){
-    tvAciklama.setText(getString(R.string.val002));
-}else if(Math.round(myAverage) >18.49 && Math.round(myAverage)<24.99){
-    tvAciklama.setText(getString(R.string.val003));
-}else if(Math.round(myAverage) >24.99 && Math.round(myAverage)<29.99){
-    tvAciklama.setText(getString(R.string.val004));
-}else if(Math.round(myAverage) >29.99 && Math.round(myAverage)<34.99){
-    tvAciklama.setText(getString(R.string.val005));
-}else if(Math.round(myAverage) >34.99 && Math.round(myAverage)<44.99){
-    tvAciklama.setText(getString(R.string.val006));
-}else if(Math.round(myAverage) >44.99){
-    tvAciklama.setText(getString(R.string.val007));
+private enum Weight {
+    UNDERWEIGHT(R.string.val002),
+    NORMAL(R.string.val003),
+    OVERWEIGHT(R.string.val004),
+    MODETATELY_OBESE(R.string.val005),
+    SEVERELY_OBESE(R.string.val006),
+    EXTREMELY_OBESE(R.string.val007);
+
+    private String string;
+    Weight (int id) {
+        this.string = getString(id);
+    }
+    public String getString() {
+        return string;
+    }
+}
+
+Weight weight = getWeight(average);
+
+switch (weight)
+
+    case UNDERWEIGHT     : tvAciklama.setText(weight.getString()); break;
+    case NORMAL          : tvAciklama.setText(weight.getString()); break;
+    case OVERWEIGHT      : tvAciklama.setText(weight.getString()); break;
+    case MODETATELY_OBESE: tvAciklama.setText(weight.getString()); break;
+    case SEVERELY_OBESE  : tvAciklama.setText(weight.getString()); break;
+    case EXTREMELY_OBESE : tvAciklama.setText(weight.getString()); break;
 }
 
 
