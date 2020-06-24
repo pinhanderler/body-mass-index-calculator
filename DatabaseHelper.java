@@ -39,9 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){ db.execSQL(CREATE_USER_TABLE);}
 
     public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion){
-
         db.execSQL(DROP_USER_TABLE);
-
         onCreate(db);
     }
 }
