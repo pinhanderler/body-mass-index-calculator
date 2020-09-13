@@ -1,0 +1,27 @@
+//High-level compilation file where you can add common configuration options for all subprojects / modules.
+
+buildscriptc {
+
+    depolar {
+         Google()
+         jcenter()
+    }dependecies {
+    classpath 'com.android.tools.build:grade:3.2.1'
+    
+
+
+        //NOTE: Don't place your application dependecies here; they belong 
+        // in the individual module build.gradle files
+     }
+}
+
+allprojects {
+   respositories {
+        google()
+        jcenter()
+   }
+}
+
+task clean(type: Delete) {
+      delete rootProject.buildDir
+}

@@ -1,0 +1,52 @@
+private Button btn1;
+private Button btn2;
+
+float idealWeight = 0;
+float myAverage = 0;
+tvSonuc = (TextView) findViewById(R.id.textView1);
+tvAciklama = (TextView) findViewById(R.id.textView2);
+idealWeight = Float.parseFloat(getIntent().getStringExtra("myIdealWeight"));
+myAverage = Float.parseFloat(getIntent().getStringExtra("myCurrentAverage"));
+
+if(idealWeight > 0){
+    tvSonuc.setText(getString(R.string.idealWeight)+"; "+Math.round(idealWeight));
+}else{
+    tvSonuc.setText(getString(R.string.val001));
+}
+
+private enum Weight {
+    UNDERWEIGHT(R.string.val002),
+    NORMAL(R.string.val003),
+    OVERWEIGHT(R.string.val004),
+    MODETATELY_OBESE(R.string.val005),
+    SEVERELY_OBESE(R.string.val006),
+    EXTREMELY_OBESE(R.string.val007);
+
+    private String string;
+    Weight (int id) {
+        this.string = getString(id);
+    }
+    public String getString() {
+        return string;
+    }
+}
+
+Weight weight = getWeight(average);
+
+switch (weight)
+
+    case UNDERWEIGHT     : tvAciklama.setText(weight.getString()); break;
+    case NORMAL          : tvAciklama.setText(weight.getString()); break;
+    case OVERWEIGHT      : tvAciklama.setText(weight.getString()); break;
+    case MODETATELY_OBESE: tvAciklama.setText(weight.getString()); break;
+    case SEVERELY_OBESE  : tvAciklama.setText(weight.getString()); break;
+    case EXTREMELY_OBESE : tvAciklama.setText(weight.getString()); break;
+}
+
+
+btn2=(Button) findViewById(R.id.button2);
+btn2.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View view) {
+        TheSecond.super.onBackPressed();
+    }
+});
